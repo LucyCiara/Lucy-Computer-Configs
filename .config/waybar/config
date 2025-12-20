@@ -1,0 +1,81 @@
+{
+    "layer": "bot",
+    "spacing": 5,
+    "height": 0,
+    "margin-bottom": 0,
+    "margin-top": 0,
+    "position": "top",
+    "margin-right": 6,
+    "margin-left": 6,
+
+    "modules-left": ["hyprland/workspaces"],
+
+    "modules-center": ["clock"],
+
+    "modules-right": [
+    "tray",
+    "network",
+    "pulseaudio",
+    "battery"
+  ],
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false,
+    "tooltip": false
+  },
+  "tray": {
+    "spacing": 10,
+    "tooltip": false
+  },
+  "clock": {
+    "fixed-center": true,
+    "format": "{:%A, %d %b - %H:%M}",
+    "tooltip-format": "w{:%W}",
+    "tooltip": true
+    
+  },
+  "network": {
+    "format-wifi": " {essid}",
+    "format-ethernet": " {ifname}",
+    "format-disconnected": " No Network",
+    "interval": 5,
+    "tooltip": false,
+    "on-click": "pgrep nm-applet >/dev/null 2>&1 && killall nm-applet || nm-applet",
+    "on-click-right": "pgrep nm-connection-editor >/dev/null 2>&1 && killall -9 nm-connection-editor || nm-connection-editor"
+  },
+  "pulseaudio": {
+    "scroll-step": 5,
+    "max-volume": 150,
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}%",
+    "format-icons": [
+      "",
+      "",
+      " "
+    ],
+    "nospacing": 1,
+    "format-muted": " Muted",
+    "on-click": "eww open --toggle audio",
+    "on-click-right": "pgrep pavucontrol >/dev/null 2>&1 && killall pavucontrol || pavucontrol",
+    "tooltip": false
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "tooltip": false,
+    "format": "{icon} {capacity}%",
+    "format-charging": "{capacity}%",
+    "format-plugged": "{capacity}%",
+    "format-alt": "{icon} {time}",
+    "format-full": "{capacity}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  }
+}

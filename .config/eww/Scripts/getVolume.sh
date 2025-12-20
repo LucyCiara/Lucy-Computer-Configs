@@ -1,0 +1,1 @@
+awk -F'[][]' '/Left:/ {print substr($2, 1, length($2)-1)}' <(amixer sget Master)

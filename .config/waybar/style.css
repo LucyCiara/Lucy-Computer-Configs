@@ -1,0 +1,116 @@
+* {
+    /* General taskbar font, because diinki was right. */
+    font-family: "Maple Mono", "Font Awesome 5 Free";
+    border-radius: 8;
+    font-size: 14px;
+    padding: 0px;
+    background: transparent;
+}
+
+window#waybar {
+    /* Linear gradients are used because it makes less harsh rounded border radius, gtk bug :p */
+    background-image: linear-gradient(to bottom, #0d0e13 100%);
+    border-radius: 14px;
+    border-style: solid;
+    border-color: #ac3231;
+    border-width: 2px;
+    padding: 0px;
+}
+
+#battery,
+#network,
+#clock,
+#custom-applauncher,
+#tray,
+#workspaces,
+#pulseaudio {
+    background-image: linear-gradient(to bottom, #52263f 100%);
+
+    margin: 6px;
+    padding: 4px 8px;
+    border-radius: 8px;
+    color: #0d0e13;
+
+    border-style: none;
+    transition-duration: 120ms;
+}
+
+#clock {
+    background-image: linear-gradient(to bottom, #52263f 100%);
+    color: #0d0e13;
+}
+
+#pulseaudio:hover {
+    background-image: linear-gradient(to bottom, #79B0B1 100%);
+    color: #0d0e13;
+    transition-duration: 120ms;
+}
+
+#network:hover {
+    background-image: linear-gradient(to bottom, #79B0B1 100%);
+    color: #0d0e13;
+    transition-duration: 120ms;
+}
+
+#tray menu {
+    background-color: #141216;
+    color: #0d0e13;
+    padding: 4px;
+}
+#tray menu menuitem {
+    background-image: linear-gradient(to bottom, #52263f 100%);
+
+    margin: 3px;
+    color: #0d0e13;
+    border-radius: 4px;
+    border-style: solid;
+    border-color: #52263f;
+}
+#tray menu menuitem:hover {
+    background-image: linear-gradient(to bottom, #52263f 100%);
+    color: #ac3231;
+    font-weight: bold;
+}
+
+#workspaces button {
+    transition-duration: 100ms;
+    all: initial;
+    min-width: 0;
+    font-weight: bold;
+    color: #0d0e13;
+    margin-right: 0.2cm;
+    margin-left: 0.2cm;
+}
+
+#workspaces button:hover {
+    transition-duration: 120ms;
+    color: #79B0B1;
+}
+#workspaces button.focused {
+    color: #ac3231;
+    font-weight: bold;
+}
+#workspaces button.active {
+    color: #ac3231;
+    font-weight: bold;
+}
+#workspaces button.urgent {
+    color: #d47593;
+}
+
+#battery {
+    background-color: #0d0e13;
+    color: #84d23c;
+}
+#battery.warning {
+    background-color: #0d0e13;
+    color: #919D38;
+}
+#battery.critical{
+    background-color: #0d0e13;
+    color: #9F6735;
+}
+#battery.urgent {
+    color: #1d2021;
+    background-color: #ac3231;
+}

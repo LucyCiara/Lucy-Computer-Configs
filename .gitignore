@@ -2,3 +2,14 @@
 /*/
 
 !.gitignore
+
+!.config/
+.config/*
+!.config/hypr/
+!.config/kitty/
+!.config/waybar/
+!.config/wofi/
+!.config/eww/
+!.config/Vencord/
+.config/Vencord/*
+!.config/Vencord/themes/

@@ -1,0 +1,65 @@
+(defpoll outputVolume :interval "30ms" `awk -F'[][]' '/Left:/ { printf substr($2, 1, length($2)-1)}' <(amixer sget Master)`)
+
+(defwindow audio
+    :monitor 0
+    :geometry
+    (geometry
+        :x "0px"
+        :y "0px"
+        :anchor "top right"
+        :width "200px")
+        
+    (audioScale))
+
+(defwidget audioScale []
+    (box    
+        :orientation "h"
+        ; (label :text "")
+    (scale  
+        :onchange "amixer set Master unmute; amixer sset Master {}%"
+        :min 0
+        :max 101
+        :value outputVolume
+        :active true)))
+
+
+
+(defvar diceNumber "0")
+(defvar diceType "0")
+(defvar focusVariable false)
+
+(defwindow roller
+    :monitor 0
+    :focusable focusVariable
+    :geometry
+    (geometry
+        :x "0px"
+        :y "0px"
+        :anchor "top center"
+        :width "500px"
+        :height "50px")
+    (buttons))
+
+(defwidget buttons []
+    (eventbox
+        :onhover "eww update focusVariable = true"
+        :onhoverlost "eww update focusVariable = false"
+        (box
+            :orientation "h"
+            (box
+                :orientation "h"
+                (input
+                    :active true
+                    :onaccept "eww update diceNumber = {}"))
+            (box
+                :orientation "h"
+                (button
+                    :onclick ""
+                    "D"))
+            (box
+                :orientation "h"
+                (input
+                    :active true
+                    :onaccept "eww update diceType = {}")))))
+
+                    
