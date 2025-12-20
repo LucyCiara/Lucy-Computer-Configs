@@ -1,8 +1,11 @@
+# Ignores everything
 /*
 /*/
 
+# Unignores itself
 !.gitignore
 
+# Ensures that only relevant content in .config is unignored
 !.config/
 .config/*
 !.config/hypr/
@@ -13,3 +16,6 @@
 !.config/Vencord/
 .config/Vencord/*
 !.config/Vencord/themes/
+
+# Ensures that relevant content in .themes is unignored
+!.themes/
