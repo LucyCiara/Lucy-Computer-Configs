@@ -1,3 +1,2 @@
-.themes/Milk/** linguist-detectable=false
-.themes/Milk/**/** linguist-detectable=false
-.themes/Milk/**/**/** linguist-detectable=false
+.themes/** linguist-detectable=false
+
